@@ -1,0 +1,31 @@
+{% extends 'master/base.html' %}
+
+{% block body %}
+  <title>Sign | Up</title>
+  <h1>Sign | Up</h1>
+  {% include 'master/message.html' %}
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Username</label>
+      <input name="username" type="text" class="form-control" id="exampleFormControlInput1" placeholder="username" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email</label>
+      <input name="email" type="text" class="form-control" id="exampleFormControlInput1" placeholder="username" />
+    </div> <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Full Name</label>
+      <input name="full_name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="full name" />
+    </div> <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Password</label>
+      <input name="password" type="password" class="form-control" id="exampleFormControlInput1" placeholder="password" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Confirm Password</label>
+      <input name="passwordc" type="password" class="form-control" id="exampleFormControlInput1" placeholder="password" />
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-success">Create User</button>
+    </div>
+  </form>
+{% endblock %}

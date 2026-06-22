@@ -1,0 +1,61 @@
+{% extends 'master/base.html' %}
+
+{% block body %}
+  {% include 'master/message.html' %}
+  <div class="mb-3">
+    <a href="{% url 'create_view' %}" class="btn btn-info">Add Data</a>
+  </div>
+  <form action="" method="GET">
+    {% csrf_token %}
+    <div class="mb-3">
+      <input name="search" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+    </div>
+    <div class="mb-3" style="margin-top:20px">
+      <button type="submit" class="btn btn-info">Search</button>
+      <a href="{% url 'read_view' %}" class="btn btn-danger">Clear</a>
+    </div>
+    <div class="mb-3">
+      <select name="filter_data" class="form-control" id="">
+        <option value="In-Stock">In Stock</option>
+        <option value="Out-Stock">Out Stock</option>
+      </select>
+      <div class="mb-4">
+        <button type="submit" class="form-control">Filter Data</button>
+        <a href="{% url 'read_view' %}" class="btn btn-danger">Clear</a>
+      </div>
+    </div>
+  </form>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Sl No.</th>
+        <th>name</th>
+        <th>price</th>
+        <th>Image</th>
+        <th>Creator</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in pro %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ p.name }}</td>
+          <td>{{ p.price }}</td>
+          <td>
+            {% if p.product_image %}
+              <img src="/{{ p.product_image }}" alt="{{ p.product_iamge }}" width="150px" height="100px" />
+            {% else %}
+              <p>Image Still Loading</p>
+            {% endif %}
+          </td>
+          <td>{{ p.created_by.full_name }}</td>
+          <td>
+            <a href="{% url 'update_view' p.id %}" class="btn btn-warning">Update</a>
+            <a href="{% url 'delete_view' p.id %}" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

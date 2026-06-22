@@ -1,0 +1,36 @@
+{% extends 'master/base.html' %}
+
+{% block body %}
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Name</label>
+      <input name="name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+      <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Price</label>
+      <input name="price" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Price" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Product Image</label>
+      <input name="product_image" type="file" class="form-control" id="exampleFormControlInput1" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Production Date</label>
+      <input name="production_date" type="date" class="form-control" id="exampleFormControlInput1" placeholder="Name" />
+    </div>
+    <div class="mb-3">
+      <select name="filter_data" id="">
+        <option value="In-Stock">In Stock</option>
+        <option value="Out-Stock">Out Stock</option>
+      </select>
+    </div>
+    <div class="mb-3" style="margin-top: 20px;">
+      <button type="submit" class="btn btn-success" >Add Data</button>
+    </div>
+  </form>
+{% endblock %}

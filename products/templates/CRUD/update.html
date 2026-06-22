@@ -1,0 +1,51 @@
+{% extends 'master/base.html' %}
+
+{% block body %}
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Name</label>
+      <input name="name" value="{{ pro.name }}" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+      <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3">{{ pro.description }}</textarea>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Price</label>
+      <input name="price" value="{{ pro.price }}" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Price" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Product Image</label>
+      <input name="product_image" value="{{ pro.product_image }}" type="file" class="form-control" id="exampleFormControlInput1" />
+      
+      {% if pro.product_image %}
+      <img src="{{ pro.product_image.url }}" alt="{{ pro.product_image }}" width="50px" height="50px" />
+      {% else %}
+      <p>No Preview Found!</p>
+      {% endif %}
+        
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Production Date</label>
+      <input name="production_date" value="{{ pro.production_date|date:'Y-m-d' }}" type="date" class="form-control" id="exampleFormControlInput1" placeholder="Name" />
+    </div>
+    <div class="mb-3">
+      <select name="filter_data" id="">
+        <option value="In-Stock" 
+        {% if pro.status == 'In-Stock' %}
+            selected
+        {% endif %}
+            >In Stock</option>
+        <option value="Out-Stock" 
+        {% if pro.status == 'Out-Stock' %}
+            selected
+        {% endif %}
+            >Out Stock</option>
+      </select>
+    </div>
+    <div class="mb-3" style="margin-top: 20px;">
+      <button type="submit" class="btn btn-success">Update Data</button>
+    </div>
+  </form>
+{% endblock %}
