@@ -30,13 +30,14 @@
 ```bash
 git clone https://github.com/shm233/newproject_product.git
 cd newproject_product
-npm install
 ```
 
-## 💻 Usage
+## 💻 Usage (cmd commands)
 
 ```bash
-npm start
+python -m venv testEnv
+cd newproject_product
+pip install -r requirements.txt
 ```
 
 ## ✨ Features
