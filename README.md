@@ -2,9 +2,10 @@
 
 # NewProject_Product
 
-<p align="center">Assignment on Authentication and Product Model on 21/6/2026 which is the attachment named "Home Task - 21-6-26".pdf</p>
+<p align="center">Product Management Simple Project
+Assignment on Authentication and Product Model on 21/6/2026 which is the attachment named "Home Task - 21-6-26".pdf</p>
 
-[![License: UNLICENSED](https://img.shields.io/badge/License-UNLICENSED-blue.svg?style=flat-square)](https://opensource.org/licenses/UNLICENSED)
+[![Stars](https://img.shields.io/github/stars/shm233/NewProject_Product?style=flat-square)](https://github.com/shm233/NewProject_Product/stargazers) [![Forks](https://img.shields.io/github/forks/shm233/NewProject_Product?style=flat-square)](https://github.com/shm233/NewProject_Product/network) [![Issues](https://img.shields.io/github/issues/shm233/NewProject_Product?style=flat-square)](https://github.com/shm233/NewProject_Product/issues) [![Watchers](https://img.shields.io/github/watchers/shm233/NewProject_Product?style=flat-square)](https://github.com/shm233/NewProject_Product/watchers) [![License: UNLICENSED](https://img.shields.io/badge/License-UNLICENSED-blue.svg?style=flat-square)](https://opensource.org/licenses/UNLICENSED)
 
 ![Python](https://img.shields.io/badge/-Python-555?style=flat-square&logo=python) ![HTML](https://img.shields.io/badge/-HTML-555?style=flat-square&logo=html)
 
@@ -30,21 +31,19 @@
 
 - Python 3.14+
 - Django 6.0+
-- Pillow 12.0+
 
-## 🚀 Installation (Download the Project & run cmd)
+## 🚀 Installation
 
 ```bash
 git clone https://github.com/shm233/newproject_product.git
-python -m venv testEnv
 cd newproject_product
-pip install -r requirements.txt
+npm install
 ```
 
 ## 💻 Usage
 
 ```bash
-python manage.py runserver
+npm start
 ```
 
 ## ✨ Features
